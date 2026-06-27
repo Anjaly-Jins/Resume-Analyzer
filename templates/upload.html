@@ -1,0 +1,49 @@
+<body>
+
+<div class="blob one"></div>
+<div class="blob two"></div>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+<nav>
+
+<div class="logo">
+
+AI Resume Analyzer
+
+</div>
+
+<a href="{{ url_for('landing') }}" class="home-btn">
+
+← Home
+
+</a>
+
+</nav>
+
+<div class="container">
+    <div class="card">
+
+        <h1>Upload Resume</h1>
+
+        <p>Upload your resume and paste the job description.</p>
+
+        <form action="/analyze" method="POST" enctype="multipart/form-data">
+
+            <input type="file" name="resume" required>
+
+            <textarea
+                name="job_description"
+                placeholder="Paste the job description here..."
+                required></textarea>
+
+            <button type="submit">
+                Analyze Resume
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+
+</body>

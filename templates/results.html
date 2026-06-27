@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analysis Result</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<nav>
+
+    <div class="logo">
+
+        AI Resume Analyzer
+
+    </div>
+
+    <a href="/upload" class="back-btn">
+
+        Analyze Another Resume
+
+    </a>
+
+</nav>
+
+
+<div class="container">
+
+
+    <!-- SCORE -->
+
+    <section class="score-card">
+
+        <h2>Resume Match Score</h2>
+
+        <div class="score-circle">
+
+            <span id="score">{{ match_score }}</span><small>%</small>
+
+        </div>
+
+        <p>
+
+            {% if match_score >= 80 %}
+                Excellent ATS Match 🚀
+
+            {% elif match_score >= 60 %}
+                Good ATS Match 👍
+
+            {% elif match_score >= 40 %}
+                Average ATS Match
+
+            {% else %}
+                Needs Improvement
+
+            {% endif %}
+
+        </p>
+
+    </section>
+
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <h1>{{ matching_skills|length }}</h1>
+
+            <p>Matching Skills</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h1>{{ missing_skills|length }}</h1>
+
+            <p>Missing Skills</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h1>{{ recommendations|length }}</h1>
+
+            <p>Recommendations</p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SKILLS -->
+
+    <section class="grid">
+
+
+        <div class="glass">
+
+            <h2>
+
+                ✅ Matching Skills
+
+            </h2>
+
+            <div class="chips">
+
+                {% for skill in matching_skills %}
+
+                <span class="good">
+
+                    {{ skill }}
+
+                </span>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+
+
+        <div class="glass">
+
+            <h2>
+
+                ❌ Missing Skills
+
+            </h2>
+
+            <div class="chips">
+
+                {% for skill in missing_skills %}
+
+                <span class="bad">
+
+                    {{ skill }}
+
+                </span>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- RECOMMENDATIONS -->
+
+    <section class="glass">
+
+        <h2>
+
+            💡 AI Recommendations
+
+        </h2>
+
+        <ul class="recommendations">
+
+            {% for item in recommendations %}
+
+            <li>
+
+                {{ item }}
+
+            </li>
+
+            {% endfor %}
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- RESUME -->
+
+    <section class="glass">
+
+        <h2>
+
+            📄 Resume Preview
+
+        </h2>
+
+        <pre>
+
+{{ resume_text }}
+
+        </pre>
+
+    </section>
+
+
+
+</div>
+
+<script src="{{ url_for('static', filename='js/results.js') }}"></script>
+
+</body>
+
+</html>

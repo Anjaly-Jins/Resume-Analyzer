@@ -1,0 +1,637 @@
+/* ==========================
+   GOOGLE FONT
+========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Outfit',sans-serif;
+}
+
+body{
+
+    background:#090814;
+    color:white;
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+/* ==========================
+   ANIMATED BACKGROUND
+========================== */
+
+.background{
+
+    position:fixed;
+    inset:0;
+    z-index:-2;
+
+    background:
+    radial-gradient(circle at 20% 20%,rgba(139,92,246,.28),transparent 35%),
+    radial-gradient(circle at 80% 70%,rgba(168,85,247,.25),transparent 40%),
+    radial-gradient(circle at 50% 100%,rgba(124,58,237,.22),transparent 40%),
+    #090814;
+
+    animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+
+0%{
+
+background-position:0 0,100% 100%,50% 100%;
+
+}
+
+50%{
+
+background-position:20% 10%,70% 90%,40% 90%;
+
+}
+
+100%{
+
+background-position:0 0,100% 100%,50% 100%;
+
+}
+
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+nav{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:30px 8%;
+
+    backdrop-filter:blur(15px);
+
+}
+
+.logo{
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:white;
+
+}
+
+.back-btn{
+
+    text-decoration:none;
+
+    color:white;
+
+    background:#7C3AED;
+
+    padding:14px 24px;
+
+    border-radius:14px;
+
+    transition:.35s;
+
+}
+
+.back-btn:hover{
+
+    background:#A855F7;
+
+    transform:translateY(-4px);
+
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container{
+
+    width:88%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding-bottom:80px;
+
+}
+
+/* ==========================
+   SCORE CARD
+========================== */
+
+.score-card{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    text-align:center;
+
+    padding:45px;
+
+    margin-bottom:40px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+.score-card h2{
+
+    font-size:34px;
+
+    margin-bottom:30px;
+
+}
+
+.score-circle{
+
+    width:220px;
+
+    height:220px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    background:
+    radial-gradient(circle,#141126 58%,transparent 60%),
+    conic-gradient(#A855F7 0deg,#7C3AED 290deg,#2D254C 290deg);
+
+    box-shadow:
+
+    0 0 35px rgba(124,58,237,.5);
+
+    animation:pop .8s ease;
+
+}
+
+.score-circle span{
+
+    font-size:58px;
+
+    font-weight:800;
+
+}
+
+.score-circle small{
+
+    font-size:26px;
+
+}
+
+.score-card p{
+
+    margin-top:25px;
+
+    font-size:22px;
+
+    color:#D1D5DB;
+
+}
+
+@keyframes pop{
+
+from{
+
+transform:scale(.6);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+/* ==========================
+   STATS
+========================== */
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+margin-bottom:40px;
+
+}
+
+.stat-card{
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(20px);
+
+border-radius:22px;
+
+padding:35px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.35s;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 15px 40px rgba(124,58,237,.3);
+
+}
+
+.stat-card h1{
+
+font-size:58px;
+
+color:#C084FC;
+
+margin-bottom:10px;
+
+}
+
+.stat-card p{
+
+font-size:18px;
+
+color:#CBD5E1;
+
+}
+/* ==========================
+   GRID
+========================== */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:30px;
+
+    margin-bottom:35px;
+
+}
+
+/* ==========================
+   GLASS CARD
+========================== */
+
+.glass{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    margin-bottom:35px;
+
+    transition:.35s;
+
+}
+
+.glass:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 45px rgba(124,58,237,.25);
+
+}
+
+.glass h2{
+
+    font-size:28px;
+
+    margin-bottom:25px;
+
+    font-weight:700;
+
+}
+
+/* ==========================
+   SKILL CHIPS
+========================== */
+
+.chips{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.chips span{
+
+    padding:12px 20px;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.good{
+
+    background:#8B5CF6;
+
+    color:white;
+
+}
+
+.good:hover{
+
+    transform:translateY(-4px);
+
+    background:#A855F7;
+
+}
+
+.bad{
+
+    background:#EF4444;
+
+    color:white;
+
+}
+
+.bad:hover{
+
+    transform:translateY(-4px);
+
+    background:#DC2626;
+
+}
+
+/* ==========================
+   RECOMMENDATIONS
+========================== */
+
+.recommendations{
+
+    list-style:none;
+
+}
+
+.recommendations li{
+
+    margin-bottom:18px;
+
+    padding:18px 22px;
+
+    border-left:5px solid #A855F7;
+
+    border-radius:14px;
+
+    background:#17152E;
+
+    transition:.35s;
+
+}
+
+.recommendations li:hover{
+
+    transform:translateX(8px);
+
+    background:#221B45;
+
+}
+
+/* ==========================
+   RESUME PREVIEW
+========================== */
+
+pre{
+
+    max-height:500px;
+
+    overflow-y:auto;
+
+    white-space:pre-wrap;
+
+    word-wrap:break-word;
+
+    background:#111022;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    color:#E5E7EB;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+pre::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+pre::-webkit-scrollbar-thumb{
+
+    background:#8B5CF6;
+
+    border-radius:20px;
+
+}
+
+pre::-webkit-scrollbar-track{
+
+    background:#19172C;
+
+}
+
+/* ==========================
+   FADE ANIMATION
+========================== */
+
+.score-card,
+.stat-card,
+.glass{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    animation:fadeUp .8s forwards;
+
+}
+
+.stat-card:nth-child(1){
+
+    animation-delay:.2s;
+
+}
+
+.stat-card:nth-child(2){
+
+    animation-delay:.4s;
+
+}
+
+.stat-card:nth-child(3){
+
+    animation-delay:.6s;
+
+}
+
+.glass:nth-of-type(1){
+
+    animation-delay:.8s;
+
+}
+
+.glass:nth-of-type(2){
+
+    animation-delay:1s;
+
+}
+
+.glass:nth-of-type(3){
+
+    animation-delay:1.2s;
+
+}
+
+@keyframes fadeUp{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:950px){
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+.score-circle{
+
+width:180px;
+
+height:180px;
+
+}
+
+.score-circle span{
+
+font-size:46px;
+
+}
+
+nav{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.container{
+
+width:94%;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.logo{
+
+font-size:26px;
+
+}
+
+.score-card h2{
+
+font-size:26px;
+
+}
+
+.glass h2{
+
+font-size:22px;
+
+}
+
+.back-btn{
+
+width:100%;
+
+text-align:center;
+
+}
+
+}
